@@ -1,0 +1,12 @@
+<div>
+  {{yield}}
+  <LinkTo @route="simulation" class="btn btn-primary" role="button" aria-pressed="false">
+    <span>
+      {{#if this.isHomePage}}
+        Re-run simulation
+      {{else }}
+        Initiate Simulation
+      {{/if}}
+    </span>
+  </LinkTo>
+</div>
