@@ -23,15 +23,10 @@ h2{
     border:none;
     padding: 0.2em;
 }
-.lift-container{
-    position: relative;
-}
-.lift {
-	
-	
-    position: absolute;
+#lift #elevators_list li {
+	position: absolute;
 	left: 100px;
-	bottom: 0px;
+	top: 100px;
 	width: 50px;
 	height: 70px;
 	background: blue;

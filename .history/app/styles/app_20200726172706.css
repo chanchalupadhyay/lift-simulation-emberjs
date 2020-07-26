@@ -25,13 +25,14 @@ h2{
 }
 .lift-container{
     position: relative;
+    border:1px solid pink
 }
 .lift {
 	
 	
     position: absolute;
 	left: 100px;
-	bottom: 0px;
+	bottom: 1px;
 	width: 50px;
 	height: 70px;
 	background: blue;
@@ -40,5 +41,5 @@ h2{
 	align-items: center;
 	justify-content: center;
 	color: white;
-	transition: 3s linear;
+	/* transition: 3s linear; */
 }

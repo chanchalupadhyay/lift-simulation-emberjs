@@ -48,7 +48,7 @@ export default class GameBoardComponent extends Component {
 
     //   }
     // })
-    console.log(direction,currentIndex);
+    console.log(listOfLiftFloors);
   }
 
 }

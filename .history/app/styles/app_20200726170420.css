@@ -23,22 +23,24 @@ h2{
     border:none;
     padding: 0.2em;
 }
-.lift-container{
-    position: relative;
-}
 .lift {
+	/*
 	
-	
-    position: absolute;
-	left: 100px;
-	bottom: 0px;
-	width: 50px;
-	height: 70px;
-	background: blue;
 	border-radius: 10px;
+	
+	
+    transition: 3s linear; */
+    position: absolute; 
+    left: 50em;
 	display: flex;
-	align-items: center;
+    
+     /* top: 100px; */
+	background: blue;
+
+    align-items: center;
+    color: white;
 	justify-content: center;
-	color: white;
-	transition: 3s linear;
+    width: 50px;
+	height: 70px;
+    border:1px solid blue;
 }

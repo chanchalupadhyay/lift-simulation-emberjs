@@ -27,18 +27,23 @@ h2{
     position: relative;
 }
 .lift {
+	/*
 	
-	
-    position: absolute;
-	left: 100px;
-	bottom: 0px;
-	width: 50px;
-	height: 70px;
-	background: blue;
 	border-radius: 10px;
+	
+	
+    transition: 3s linear; */
+    position: absolute; 
+    left: 1em;
 	display: flex;
-	align-items: center;
+    
+     top: 1em;
+	background: blue;
+
+    align-items: center;
+    color: white;
 	justify-content: center;
-	color: white;
-	transition: 3s linear;
+    width: 50px;
+	height: 70px;
+    border:1px solid blue;
 }

@@ -25,6 +25,7 @@ h2{
 }
 .lift-container{
     position: relative;
+    /* border:1px solid pink */
 }
 .lift {
 	

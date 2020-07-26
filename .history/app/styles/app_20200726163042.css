@@ -1,0 +1,22 @@
+h2{
+    color:rgb(2, 2, 53)
+}
+.game-board-container{
+    border:5px solid grey;padding:5em ;width:80%;margin:0 auto
+}
+.button-container{
+    padding:3px
+}
+
+.floor{
+    border:1px solid grey
+}
+.btn-up{
+    background-color: rgb(247, 247, 141);
+    color:white
+    border:none
+}
+.btn-down{
+    background-color: green;
+    color:white
+}

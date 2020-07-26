@@ -41,14 +41,13 @@ export default class GameBoardComponent extends Component {
   buttonPressed(direction, currentIndex) {
     const listOfLiftFloors = this.board.filter(ele => ele.hasLift).map(ele => ele.floorLevel);
     const nearestLift = this.board[currentIndex -1].nearestLiftFloor;
-    
     // const
     // this.board.map((ele, index) => {
     //   if(index + 1 === nearestLift) {
 
     //   }
     // })
-    console.log(direction,currentIndex);
+    console.log(listOfLiftFloors);
   }
 
 }

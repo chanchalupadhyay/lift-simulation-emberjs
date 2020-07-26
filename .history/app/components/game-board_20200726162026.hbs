@@ -1,0 +1,18 @@
+{{yield}}
+<div class="button-conatiner">
+  {{!-- test Game Board --}}
+  {{!-- lift simulation --}}
+  {{#each this.board as |item index|}}
+    <Floor @level={{item.floorLevel}}>
+      {{#if item.hasLift }}
+        <Lift @liftNumber ={{item.currentLift}}/>
+      {{/if}}
+      {{#if (is-edge-index this.board.length index 'up')}}
+        <button type="button" {{on "click" (fn this.buttonPressed 'up' item.floorLevel)}}>Up</button>
+      {{/if}}
+      {{#if (is-edge-index this.board.length index 'down')}}
+        <button type="button" {{on "click" (fn this.buttonPressed 'down' item.floorLevel)}}>Down</button>
+      {{/if}}
+    </Floor>
+  {{/each}}
+</div>
