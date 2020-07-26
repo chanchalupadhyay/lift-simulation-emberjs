@@ -1,53 +1,58 @@
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
 
 export default class GameBoardComponent extends Component {
-
-  @tracked board = [
+  @tracked floorDetails = [
     {
       floorLevel: 1,
-      currentLift:-1,
-      hasLift: false,
-      nearestLiftFloor: 2
+      floorName: 'Ground Floor',
     },
     {
       floorLevel: 2,
-      currentLift: 1,
-      hasLift: true,
-      nearestLiftFloor: 2
+      floorName: 'Ground Floor',
     },
     {
       floorLevel: 3,
-      currentLift: -1,
-      hasLift: false,
-      nearestLiftFloor: 2
+      floorName: 'Ground Floor',
     },
     {
       floorLevel: 4,
-      currentLift: 2,
-      hasLift: true,
-      nearestLiftFloor: 4
+      floorName: 'Ground Floor',
     },
     {
       floorLevel: 5,
-      currentLift: -1,
-      hasLift: false,
-      nearestLiftFloor: 4
-    }
-  ]
+      floorName: 'Ground Floor',
+    },
+  ];
+
+  @tracked liftFloors = [1, 3];
 
   @action
-  buttonPressed(direction, currentIndex) {
-    const listOfLiftFloors = this.board.filter(ele => ele.hasLift).map(ele => ele.floorLevel);
-    const nearestLift = this.board[currentIndex -1].nearestLiftFloor;
-    // const
-    // this.board.map((ele, index) => {
-    //   if(index + 1 === nearestLift) {
+  buttonPressed(direction, currentFloorIndex) {
+    let liftToBeMovedIndex = 0;
+    if (direction === "up") {
+      liftToBeMovedIndex = this.liftFloors.findIndex(
+        (ele) => ele < currentFloorIndex - 1
+      );
+    } else {
+      liftToBeMovedIndex = this.liftFloors.findIndex(
+        (ele) => ele > currentFloorIndex - 1
+      );
+    }
 
-    //   }
-    // })
-    console.log(listOfLiftFloors);
+    if (liftToBeMovedIndex === -1) {
+      liftToBeMovedIndex = 0;
+    }
+
+    while (this.liftFloors[liftToBeMovedIndex] !== currentFloorIndex) {
+      this.liftFloors.set(
+        liftToBeMovedIndex,
+        this.liftFloors[liftToBeMovedIndex] > currentFloorIndex
+          ? this.liftFloors[liftToBeMovedIndex] - 1
+          : this.liftFloors[liftToBeMovedIndex] + 1
+      );
+      this.liftFloors.arrayContentDidChange(liftToBeMovedIndex, 0, 0);
+    }
   }
-
 }

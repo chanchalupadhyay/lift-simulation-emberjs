@@ -1,7 +1,6 @@
 import { helper } from '@ember/component/helper';
 
-function isEdgeIndex([arrayLength, currentIndex, direction]/*, hash*/) {
-  console.log('testing' + arrayLength + '  '+ currentIndex + '  '+ direction)
+function isEdgeIndex([arrayLength, currentIndex, direction]) {
 
   if(direction === 'up')
     return arrayLength - 1 !== currentIndex;

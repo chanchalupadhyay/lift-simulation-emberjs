@@ -1,17 +1,17 @@
 {{yield}}
 <div>
   test Game Board
-  {{#each this.board as |item index|}}
+  {{#each this.floorDetails as |item index|}}
     <Floor @level={{item.floorLevel}}>
-      {{#if item.hasLift }}
-        <Lift @liftNumber ={{item.currentLift}}/>
-      {{/if}}
-      {{#if (is-edge-index this.board.length index 'up')}}
+      {{#if (is-edge-index this.floorDetails.length index 'up')}}
         <button type="button" {{on "click" (fn this.buttonPressed 'up' item.floorLevel)}}>Up</button>
       {{/if}}
-      {{#if (is-edge-index this.board.length index 'down')}}
+      {{#if (is-edge-index this.floorDetails.length index 'down')}}
         <button type="button" {{on "click" (fn this.buttonPressed 'down' item.floorLevel)}}>Down</button>
       {{/if}}
     </Floor>
+  {{/each}}
+  {{#each this.liftFloors as |liftElement liftIndex|}}
+    <Lift @liftNumber = {{liftIndex}} @liftFloor = {{liftElement}}></Lift>
   {{/each}}
 </div>
