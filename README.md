@@ -1,13 +1,14 @@
-# Instructions
+# Lift-Simulation
 
-In this exercises, you'll will make a lift simulation web app using Emberjs.
+Create a web app where you can simulate lift mechanics
 
-## Requirements
-- Your simluation web app should contain 3 Lifts and 5 Floors. 
-- Every floor contains control buttons `UP` and `Down` to summon a lift to that floor.
-- Animate the Lift movement with linear animation.
-- Please refer `Lift-Simulation-Example` diagram in `lift-simulation` folder.
+Run the program:
+git clone
+cd Lift-Simulation-emberjs
+npm install
+ember serve
 
-
-## Restrictions
-- You are not allowed to use any extra library at all for `CSS` or any other thing. 
+- After server starts open any brower and  write URL localhost:4200
+- Execution of program starts from home.hbs
+- We have separate components defined for  lift, Floor, game-board.
+- Initially all lifts are grounded, when any button is pressed, the floor number and the direction is passed to buttonpressed and it starts to analyse lift. Analysing lift means finding the lift which is closest and then moving the particular lift to the same floor with delicate animation.
