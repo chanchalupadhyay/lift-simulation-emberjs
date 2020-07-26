@@ -5,25 +5,25 @@ import { action } from "@ember/object";
 export default class GameBoardComponent extends Component {
   @tracked floorDetails = [
     {
-      floorLevel: 1,
-      floorName: 'Ground Floor',
-    },
-    {
-      floorLevel: 2,
-      floorName: 'Ground Floor',
-    },
-    {
-      floorLevel: 3,
-      floorName: 'Ground Floor',
+      floorLevel: 5,
+      floorName: '5th Floor',
     },
     {
       floorLevel: 4,
-      floorName: 'Ground Floor',
+      floorName: '4th Floor',
     },
     {
-      floorLevel: 5,
-      floorName: 'Ground Floor',
+      floorLevel: 3,
+      floorName: '2nd Floor',
     },
+    {
+      floorLevel: 2,
+      floorName: '1st Floor',
+    },
+    {
+      floorLevel: 1,
+      floorName: 'Ground Floor',
+    }
   ];
 
   @tracked liftFloors = [1, 3];

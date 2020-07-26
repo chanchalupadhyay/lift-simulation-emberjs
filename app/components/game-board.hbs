@@ -1,17 +1,23 @@
 {{yield}}
-<div>
-  test Game Board
-  {{#each this.floorDetails as |item index|}}
-    <Floor @level={{item.floorLevel}}>
-      {{#if (is-edge-index this.floorDetails.length index 'up')}}
-        <button type="button" {{on "click" (fn this.buttonPressed 'up' item.floorLevel)}}>Up</button>
-      {{/if}}
-      {{#if (is-edge-index this.floorDetails.length index 'down')}}
-        <button type="button" {{on "click" (fn this.buttonPressed 'down' item.floorLevel)}}>Down</button>
-      {{/if}}
+<div class="simulation-container">
+  <div class="floor-container">
+    {{#each this.floorDetails as |item index|}}
+    <Floor @level={{item.floorLevel}} @name={{item.floorName}}>
+      <div class="button-container">
+        {{#if (is-edge-index this.floorDetails.length item.floorLevel 'up')}}
+        <button class="btn-up" type="button" {{on "click" (fn this.buttonPressed 'up' item.floorLevel)}}>Up</button>
+        {{/if}}
+        {{#if (is-edge-index this.floorDetails.length item.floorLevel 'down')}}
+        <button class="btn-down" type="button"
+          {{on "click" (fn this.buttonPressed 'down' item.floorLevel)}}>Down</button>
+        {{/if}}
+      </div>
     </Floor>
-  {{/each}}
-  {{#each this.liftFloors as |liftElement liftIndex|}}
-    <Lift @liftNumber = {{liftIndex}} @liftFloor = {{liftElement}}></Lift>
-  {{/each}}
+    {{/each}}
+  </div>
+  <div class="lift-container">
+    {{#each this.liftFloors as |liftElement liftIndex|}}
+    <Lift @liftNumber={{liftIndex}} @liftFloor={{liftElement}}></Lift>
+    {{/each}}
+  </div>
 </div>
