@@ -22,17 +22,16 @@ branches:
     - master
 
 script:
-  # - npm test
-   - npm run lint:js
+  - npm run lint:js
   - npm test
   - npm run build -- -prod # build app and prepare dist folder
 
-  
+
 # deploy master branch to GitHub pages
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
+  github-token: fd3b85b48316e1c0d9d04b5a5bbfd7a985e5590a
   keep-history: true
   on:
     branch: master
