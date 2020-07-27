@@ -2,9 +2,9 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'lift-simulation-emberjs',
+    modulePrefix: 'lift-simulation-ember',
     environment,
-    rootURL: '/lift-simulation-emberjs',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -45,7 +45,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.rootURL = '/lift-simulation-emberjs/';
+    ENV.rootURL = '/lift-simulation-emberjs/'
   }
 
   return ENV;
