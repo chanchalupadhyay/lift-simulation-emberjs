@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'lift-simulation-emberjs',
+    modulePrefix: 'lift-simulation-ember',
     environment,
     rootURL: '/',
     locationType: 'auto',
