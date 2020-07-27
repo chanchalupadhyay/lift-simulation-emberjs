@@ -1,7 +1,7 @@
 {{yield}}
 <div class="simulation-container">
   <div class="floor-container">
-    {{#each this.floorDetails as |item index|}}
+    {{#each this.floorDetails as |item|}}
     <Floor @level={{item.floorLevel}} @name={{item.floorName}}>
       <div class="button-container">
         {{#if (is-edge-index this.floorDetails.length item.floorLevel 'up')}}

@@ -30,29 +30,25 @@ export default class GameBoardComponent extends Component {
 
   @action
   buttonPressed(direction, currentFloorIndex) {
-    let liftToBeMovedIndex = 0;
-    if (direction === "up") {
-      liftToBeMovedIndex = this.liftFloors.findIndex(
-        (ele) => ele < currentFloorIndex - 1
-      );
-    } else {
-      liftToBeMovedIndex = this.liftFloors.findIndex(
-        (ele) => ele > currentFloorIndex - 1
-      );
+
+    let nearestLiftIndex = 0;
+    let distanceOfLift = Number.MAX_SAFE_INTEGER;
+    for(let itr = 0; itr < this.liftFloors.length; itr += 1) {
+      if(distanceOfLift > Math.abs(this.liftFloors.get(itr) - currentFloorIndex) && distanceOfLift !== -1){
+        distanceOfLift = Math.abs(this.liftFloors.get(itr) - currentFloorIndex);
+        nearestLiftIndex= itr;
+      }
     }
 
-    if (liftToBeMovedIndex === -1) {
-      liftToBeMovedIndex = 0;
-    }
-
-    while (this.liftFloors[liftToBeMovedIndex] !== currentFloorIndex) {
+    while (this.liftFloors[nearestLiftIndex] !== currentFloorIndex) {
       this.liftFloors.set(
-        liftToBeMovedIndex,
-        this.liftFloors[liftToBeMovedIndex] > currentFloorIndex
-          ? this.liftFloors[liftToBeMovedIndex] - 1
-          : this.liftFloors[liftToBeMovedIndex] + 1
+        nearestLiftIndex,
+        this.liftFloors[nearestLiftIndex] > currentFloorIndex
+          ? this.liftFloors[nearestLiftIndex] - 1
+          : this.liftFloors[nearestLiftIndex] + 1
       );
-      this.liftFloors.arrayContentDidChange(liftToBeMovedIndex, 0, 0);
+      this.liftFloors.arrayContentDidChange(nearestLiftIndex, 0, 0);
+
     }
   }
 }

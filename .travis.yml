@@ -27,7 +27,7 @@ script:
   - npm test
   - npm run build -- -prod # build app and prepare dist folder
 
-  
+
 # deploy master branch to GitHub pages
 deploy:
   provider: pages
