@@ -12,8 +12,12 @@ $ ember serve
 ### Features to be executed: 
 
 - [x] simulation engine
+- [x] Use CSS values to show the simulation
+- [ ] Use of dynamic position for styling based on number of floors and Lifts
+- [ ] test cases for helpers and game-board
 - [ ] Animation on lift movement
 - [ ] Deploy simulation app
+- [ ] Option to make floorDetails and liftFloors as dynamic by giving input.
 
 ## Contributing
 
